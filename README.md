@@ -94,7 +94,8 @@ Here is the breakdown of each file and its purpose within the project.
 *   **`sf_config.py`**: **Critical Configuration File.** Stores a Python dictionary with all Snowflake connection parameters (user, password, account, database, schema, etc.). It is imported by any script that needs to connect to Snowflake.
 *   **`structure.py` / `structure.txt`**: These files likely work together to programmatically export the database schema structure into a simple text file for review or documentation.
 ---
-
+*   **`logs/`**: A dedicated directory for storing runtime log files, keeping the root directory clean.
+---
 
 ## 5. Setup and Installation
 
