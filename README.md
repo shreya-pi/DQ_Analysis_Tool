@@ -94,20 +94,7 @@ Here is the breakdown of each file and its purpose within the project.
 *   **`sf_config.py`**: **Critical Configuration File.** Stores a Python dictionary with all Snowflake connection parameters (user, password, account, database, schema, etc.). It is imported by any script that needs to connect to Snowflake.
 *   **`structure.py` / `structure.txt`**: These files likely work together to programmatically export the database schema structure into a simple text file for review or documentation.
 ---
-*   **`helper_scripts/`**: This directory promotes clean code by separating concerns.
-    *   **`col_desc.py`**: Contains the `SnowflakeSchemaDescriber` class. It uses a sentence-transformer model to find the relevant schema from `original_schema.txt` and calls Cortex to generate descriptions.
-    *   **`cortex_complete.py`**: Contains a focused function that takes a prompt and model name, and executes the `SNOWFLAKE.CORTEX.COMPLETE` SQL command, handling options like `max_tokens`.
-    *   **`dmf_definitions.py`**: Defines a simple Python dictionary mapping user-friendly function names (e.g., "Find Null Count in Column") to their corresponding SQL code templates (e.g., `SUM(CASE WHEN {column} IS NULL THEN 1 ELSE 0 END)`). This makes the main app code cleaner and the functions easier to manage.
-    *   **`log.py`**: A standard logging setup module. It would configure a logger to write timestamped messages to a file in the `logs/` directory for easier debugging.
-    *   **`process_output.py`**: Could contain functions to format raw data from Snowflake into more presentable formats, such as converting a DataFrame to a styled Markdown table or a JSON object.
----
-*   **`input_and_output_files/`**: Centralizes file-based data.
-    *   **`original_schema.txt`**: **Crucial Input File.** This must contain the `CREATE TABLE` DDL for the tables you want to describe with the Cortex feature. 
-    *   **`formatted_schema.md` / `schema.json`**: These provide alternative, more structured ways to store or view the schema information.`col_desc.py` reads from this file.
-    *   **`table_desc.txt`**: The default output file where the AI-generated column descriptions are saved.
-    *   **`views.md` / `views.json`**: Documentation explaining the SQL logic for the required Snowflake views (`_duplicate_record`, `_clean_view`), essential for other developers to understand the project's dependencies.
----
-*   **`logs/`**: A dedicated directory for storing runtime log files, keeping the root directory clean.
+
 
 ## 5. Setup and Installation
 
