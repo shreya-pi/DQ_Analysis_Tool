@@ -1,0 +1,122 @@
+### Column Descriptions for the ASSETMASTER Table
+
+1. **ID**
+   - **Purpose**: Unique identifier for each asset.
+   - **Type of Data**: NUMBER(38,0)
+   - **Role**: Primary Key, auto-incrementing identifier.
+   - **Relationships**: Serves as a unique identifier for each asset, potentially referenced by other tables as a foreign key.
+   - **Constraints**: Primary Key, auto-incrementing.
+
+2. **SPVNAME**
+   - **Purpose**: Stores the name of the Special Purpose Vehicle (SPV).
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+3. **LEGALSTRUCTURE**
+   - **Purpose**: Describes the legal structure of the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+4. **DEALNAME**
+   - **Purpose**: Stores the name of the deal associated with the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: Could be related to a deals table, but no direct foreign key relationship is specified here.
+
+5. **SHARECLASSNAME**
+   - **Purpose**: Stores the name of the share class of the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: Could be related to a share classes table, but no direct foreign key relationship is specified here.
+
+6. **ASSETTYPE**
+   - **Purpose**: Describes the type of the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+7. **DEALTYPE**
+   - **Purpose**: Describes the type of the deal associated with the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+8. **FUNDTYPE**
+   - **Purpose**: Describes the type of fund associated with the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+9. **ASSETCLASS**
+   - **Purpose**: Describes the class of the asset.
+   - **Type of Data**: VARCHAR(255)
+   - **Role**: Attribute of the asset, providing additional descriptive information.
+   - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+10. **SECTOR**
+    - **Purpose**: Describes the sector of the asset.
+    - **Type of Data**: VARCHAR(255)
+    - **Role**: Attribute of the asset, providing additional descriptive information.
+    - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+11. **ISIN**
+    - **Purpose**: Stores the International Securities Identification Number (ISIN) of the asset.
+    - **Type of Data**: VARCHAR(255)
+    - **Role**: Unique identifier for financial instruments, providing a standardized reference.
+    - **Relationships**: Could be used to link with external financial data sources.
+
+12. **MASTERISIN**
+    - **Purpose**: Stores the Master ISIN, which could refer to a parent or overarching ISIN for a group of assets.
+    - **Type of Data**: VARCHAR(255)
+    - **Role**: Attribute of the asset, providing additional identification.
+    - **Relationships**: Could be used to link with external financial data sources or to group related assets.
+
+13. **REGION**
+    - **Purpose**: Describes the geographical region associated with the asset.
+    - **Type of Data**: VARCHAR(255)
+    - **Role**: Attribute of the asset, providing additional descriptive information.
+    - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+14. **STRATEGY**
+    - **Purpose**: Describes the investment strategy associated with the asset.
+    - **Type of Data**: VARCHAR(255)
+    - **Role**: Attribute of the asset, providing additional descriptive information.
+    - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+15. **SHARECLASSID**
+    - **Purpose**: Stores the ID of the share class.
+    - **Type of Data**: NUMBER(38,0)
+    - **Role**: Foreign key referencing a share classes table.
+    - **Relationships**: References a share classes table, establishing a relationship between the asset and its share class.
+
+16. **FUNDID**
+    - **Purpose**: Stores the ID of the fund.
+    - **Type of Data**: NUMBER(38,0)
+    - **Role**: Foreign key referencing a funds table.
+    - **Relationships**: References a funds table, establishing a relationship between the asset and its fund.
+
+17. **ISLEAD**
+    - **Purpose**: Indicates whether the asset is a lead asset.
+    - **Type of Data**: BOOLEAN
+    - **Role**: Status flag.
+    - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+18. **DEALID**
+    - **Purpose**: Stores the ID of the deal.
+    - **Type of Data**: NUMBER(38,0)
+    - **Role**: Foreign key referencing a deals table.
+    - **Relationships**: References a deals table, establishing a relationship between the asset and its deal.
+
+19. **STATUS**
+    - **Purpose**: Describes the current status of the asset.
+    - **Type of Data**: VARCHAR(255)
+    - **Role**: Status flag.
+    - **Relationships**: No direct relationships mentioned, but could be used in queries to filter or group assets.
+
+20. **CREATE_DATE**
+    - **Purpose**: Stores the date and time when the asset was created.
+    - **Type of Data**: TIMESTAMP_NTZ(9)
+    - **Role**: Timestamp, automatically set to the current timestamp upon creation.
+    - **Relationships**: No direct relationships mentioned, but useful for tracking the history of asset creation.
