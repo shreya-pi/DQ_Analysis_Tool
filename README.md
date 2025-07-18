@@ -66,15 +66,13 @@ Here is the breakdown of each file and its purpose within the project.
 ├── app.py                      # The main Streamlit application entry point.
 ├── requirements.txt            # Lists all Python libraries needed for the project.
 ├── sf_config.py                # Stores Snowflake connection credentials.
-├── structure.py                # (Assumed) A script to generate schema structure info.
-├── structure.txt               # (Assumed) The output text file from structure.py.
 │
 ├── helper_scripts/             # Modules containing reusable helper logic.
 │   ├── col_desc.py             # Handles the logic for describing table columns.
-│   ├── cortex_complete.py      # (Assumed) A dedicated module to interface with Cortex.
+│   ├── cortex_complete.py      # A dedicated module to interface with Cortex.
 │   ├── dmf_definitions.py      # Defines the library of Data Monitoring Functions (DMFs).
-│   ├── log.py                  # (Assumed) Configures application logging.
-│   └── process_output.py       # (Assumed) A module for formatting query results.
+│   ├── log.py                  # Configures application logging.
+│   └── process_output.py       #A module for formatting query results.
 │
 ├── input_and_output_files/     # A place for file-based inputs and outputs.
 │   ├── formatted_schema.md     # A human-readable Markdown file of the table schemas.
@@ -92,7 +90,6 @@ Here is the breakdown of each file and its purpose within the project.
 *   **`app.py`**: The heart of the application. It contains all the Streamlit code for the user interface, manages application state, and orchestrates calls to helper scripts and Snowflake.
 *   **`requirements.txt`**: Defines the project's Python dependencies. A new user can install everything needed with `pip install -r requirements.txt`.
 *   **`sf_config.py`**: **Critical Configuration File.** Stores a Python dictionary with all Snowflake connection parameters (user, password, account, database, schema, etc.). It is imported by any script that needs to connect to Snowflake.
-*   **`structure.py` / `structure.txt`**: These files likely work together to programmatically export the database schema structure into a simple text file for review or documentation.
 ---
 *   **`logs/`**: A dedicated directory for storing runtime log files, keeping the root directory clean.
 ---
@@ -132,9 +129,9 @@ Follow these steps to get the dashboard running locally.
     *   Fill in your Snowflake account details (user, password, account, etc.). **Do not commit this file with real credentials to a public repository.**
 
 5.  **Prepare Snowflake Objects**
-    *   For each table you want to analyze in the "Data Quality Dashboard" (e.g., `ASSETMASTER`), you **must** create two corresponding views in your Snowflake schema:
-        *   A duplicate records view: `ASSETMASTER_duplicate_record`
-        *   A cleaned data view: `ASSETMASTER_clean_view`
+    *   For each table you want to analyze in the "Data Quality Dashboard" (e.g., `TABLE`), you **must** create two corresponding views in your Snowflake schema:
+        *   A duplicate records view: `TABLE_duplicate_record`
+        *   A cleaned data view: `TABLE_clean_view`
 
 6.  **Populate Schema File**
     *   Open `input_and_output_files/original_schema.txt`.
